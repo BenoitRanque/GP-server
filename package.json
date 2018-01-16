@@ -21,7 +21,8 @@
     "babel": "^6.23.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "pg-promise": "^7.3.3"
+    "pg-promise": "^7.3.3",
+    "require-sql": "^1.0.0"
   },
   "repository": {
     "type": "git",
