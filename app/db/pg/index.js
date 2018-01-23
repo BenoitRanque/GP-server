@@ -1,5 +1,5 @@
 import pgp from 'pg-promise'
-import { ENV, DB_NAME, DB_USER, DB_PASS, DB_HOST, DB_PORT } from '../cfg'
+import { ENV, PG_NAME, PG_USER, PG_PASS, PG_HOST, PG_PORT } from '../../cfg'
 import tables from './tables'
 
 // enable require for sql files
@@ -7,11 +7,11 @@ require('require-sql')
 
 const initOptions = {}
 const connectOptions = {
-  host: DB_HOST,
-  port: DB_PORT,
-  database: DB_NAME,
-  user: DB_USER,
-  password: DB_PASS
+  host: PG_HOST,
+  port: PG_PORT,
+  database: PG_NAME,
+  user: PG_USER,
+  password: PG_PASS
 }
 
 const db = pgp(initOptions)(connectOptions)

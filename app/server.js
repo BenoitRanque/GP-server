@@ -1,7 +1,7 @@
 import app from './app'
-import { PORT, IP } from './cfg'
+import { PORT, HOST } from './cfg'
 
-const server = app.listen(PORT, IP, function (err) {
+const server = app.listen(PORT, HOST, function (err) {
   if (err) throw err
-  console.log('listening at ' + IP + ' on port ' + PORT)
+  console.log('listening at ' + HOST + ' on port ' + PORT)
 })
