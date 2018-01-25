@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS roles (
-  id SERIAL PRIMARY KEY,
+  id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT,
-  rank INTEGER,
   about TEXT,
-  privileges integer[]
+  rank INTEGER,
+  privileges uuid[]
 )

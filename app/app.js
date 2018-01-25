@@ -2,9 +2,9 @@ import express  from 'express'
 import bodyParser from 'body-parser'
 import headers  from './utils/headers'
 import api from './api'
-import db from './db'
+// import db from './db'
 
-express.request.db = db
+// express.request.db = db
 
 const app = express()
 
