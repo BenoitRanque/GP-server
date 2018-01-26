@@ -1,7 +1,9 @@
 CREATE TABLE IF NOT EXISTS privileges (
   id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
-  name TEXT,
+  action_name TEXT,
   about TEXT,
-  value TEXT UNIQUE NOT NULL,
-  dependencies uuid[]
+  get_routes TEXT[],
+  post_routes TEXT[],
+  put_routes TEXT[],
+  delete_routes TEXT[]
 )
