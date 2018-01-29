@@ -1,9 +1,9 @@
 import express from 'express'
 
-import query from './query'
+import core from './core'
 
 const router = express.Router()
 
-router.use('/query', query)
+router.use(core)
 
 export default router

@@ -4,7 +4,8 @@
   "description": "Backend for GP",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pg-setup": "node app/pg-setup/index.js"
   },
   "author": "Benoit Ranque",
   "license": "ISC",

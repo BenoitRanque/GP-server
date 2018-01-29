@@ -1,1 +1,0 @@
-SELECT ONE FROM users WHERE USERNAME ${username}

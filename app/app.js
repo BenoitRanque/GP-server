@@ -2,9 +2,9 @@ import express  from 'express'
 import bodyParser from 'body-parser'
 import headers  from './utils/headers'
 import api from './api'
-import { PG } from './db'
+import pg from './utils/pg'
 
-express.request.pg = PG
+express.request.pg = pg
 
 const app = express()
 
