@@ -36,6 +36,6 @@ const connectOptions = {
   password: PG_PASS
 }
 
-const db = pgp(initOptions)(connectOptions)
+const pg = pgp(initOptions)(connectOptions)
 
-export default db
+export default pg

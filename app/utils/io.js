@@ -1,18 +1,14 @@
 import socketio from 'socket.io'
-import server from '../server'
+import { io } from './init'
 
-const io = socketio.listen(server)
+io.sockets.on('connection', socket => {
+  
+})
+io.sockets.on('connection', socket => {
+  
+})
+io.sockets.on('connection', socket => {
+  
+})
+
 export default io
-export default function (server) {
-  const io = socketio
-
-  io.sockets.on('connection', socket => {
-    
-  })
-  io.sockets.on('connection', socket => {
-
-  })
-  io.sockets.on('connection', socket => {
-
-  })
-}

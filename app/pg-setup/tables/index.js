@@ -1,5 +1,6 @@
 export default [
   'users',
   'roles',
-  'privileges'
+  'privileges',
+  'user_session'
 ]
