@@ -1,6 +1,5 @@
 import pgp from 'pg-promise'
 import { PG_NAME, PG_USER, PG_PASS, PG_HOST, PG_PORT } from '../cfg'
-import tables from './tables'
 
 // enable require for .sql files
 require('require-sql')
@@ -16,19 +15,21 @@ const connectOptions = {
 
 const db = pgp(initOptions)(connectOptions)
 
-// create or alter tables
-tables.forEach(table => {
-  let query = require(`./tables/${table}.sql`)
+export default function runQuery ( queryName, callback ) {
+  let query = require(`./queries/${queryName}.sql`)
+
+  if (!query) {
+    console.error(`Query ${queryName} not found`)
+    return
+  }
   db
     .any(query)
     .then(response => {
       console.log(response)
+      if (callback !== undefined ) { callback() }
     })
     .catch(error => {
       console.error(error)
+      if (callback !== undefined ) { callback() }
     })
-})
-console.log('')
-console.log('Finished creating and altering tables')
-console.log('')
-console.log('')
+}

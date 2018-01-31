@@ -1,1 +1,1 @@
-  SELECT * FROM users WHERE username = ${username}
+  SELECT id, username, password FROM users WHERE username = ${username}

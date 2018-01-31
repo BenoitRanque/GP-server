@@ -8,7 +8,7 @@ const pgSession = connectPg(session)
 export default session({
   store: new pgSession({
     pgPromise : pg,                // Connection
-    tableName : 'user_session'   // Use another table-name than the default "session" one
+    tableName : 'sessions'   // Use another table-name than the default "session" one
   }),
   secret: COOKIE_SECRET,
   resave: false,
