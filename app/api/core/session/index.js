@@ -1,5 +1,6 @@
 import express from 'express'
 import bcrypt from 'bcrypt'
+import { BCRYPT_SALT_ROUNDS } from '../../../cfg'
 
 const router = express.Router()
 
@@ -30,8 +31,14 @@ router.get('/logout', function (req, res) {
 })
 
 router.get('/hash', function (req, res) {
-  req.session.destroy()
-  res.status(200).end()
+  bcrypt.hash('', BCRYPT_SALT_ROUNDS)
+    .then(hash => {
+      res.status(200).send(hash)
+    })
+    .catch(err => {
+      console.error(err)
+      res.status(500).end()
+    })
 })
 
 
