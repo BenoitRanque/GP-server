@@ -15,7 +15,7 @@ const connectOptions = {
 
 const db = pgp(initOptions)(connectOptions)
 
-export default function runQuery ( queryName, callback ) {
+export default function runQuery ( queryName, values, callback ) {
   let query = require(`./queries/${queryName}.sql`)
 
   if (!query) {
@@ -23,7 +23,7 @@ export default function runQuery ( queryName, callback ) {
     return
   }
   db
-    .any(query)
+    .any(query, values)
     .then(response => {
       console.log(response)
       if (callback !== undefined ) { callback() }

@@ -6,6 +6,8 @@ import pg from './utils/pg'
 import session from './utils/session'
 import { app } from './utils/init'
 
+app.request.pg = pg
+
 app.use(headers)
 app.use(session)
 app.use('/api', bodyParser.json(), api)

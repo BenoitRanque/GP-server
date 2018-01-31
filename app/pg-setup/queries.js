@@ -1,6 +1,7 @@
 import runQuery from './runQuery'
 
-runQuery('users')
-runQuery('roles')
-runQuery('privileges')
+runQuery('drop', { table: 'sessions' })
+// runQuery('users')
+// runQuery('roles')
+// runQuery('privileges')
 runQuery('sessions')
