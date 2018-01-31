@@ -7,6 +7,8 @@ const router = express.Router()
 router.post('/test', (req, res) => {
   req.session.message = req.body.message
   res.status(200).send()
+
+  io.sockets.emit('message')
 })
 
 router.get('/test', (req, res) => {

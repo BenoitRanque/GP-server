@@ -16,7 +16,7 @@ router.post('/login', function (req, res) {
           
           delete user.password
           req.session.user = user
-          res.status(200).json(user)
+          res.status(200).json({ user, })
         })
         .catch(err => {
           console.error(err)
