@@ -12,8 +12,8 @@ app.use(function (req, res, next) {
 })
 
 app.use(headers)
+app.use(session)
 app.use('/api', bodyParser.json(), api)
 app.use('/', express.static('public'))
-app.use(session)
 
 export default app
