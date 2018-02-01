@@ -1,5 +1,8 @@
-import server from './utils/init'
+import http from 'http'
+import app from './app'
 import { PORT, HOST } from './cfg'
+
+const server = http.createServer(app)
 
 server.listen(PORT, HOST, err => {
   if (err) throw err
